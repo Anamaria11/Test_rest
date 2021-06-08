@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:client:client-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../client-api/src/main/java"
+}
+
+group = "com.personalsoft.client"

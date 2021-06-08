@@ -1,0 +1,10 @@
+Bundle-Name: client-api
+Bundle-SymbolicName: com.personalsoft.client.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.personalsoft.client.exception,\
+	com.personalsoft.client.model,\
+	com.personalsoft.client.service,\
+	com.personalsoft.client.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../client-service/service.xml

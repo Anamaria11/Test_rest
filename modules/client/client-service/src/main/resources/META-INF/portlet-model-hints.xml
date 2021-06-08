@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.personalsoft.client.model.Client">
+		<field name="uuid" type="String" />
+		<field name="clientId" type="long" />
+		<field name="origin" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="lastName" type="String" />
+		<field name="documentType" type="int" />
+		<field name="documentNumber" type="String" />
+	</model>
+</model-hints>

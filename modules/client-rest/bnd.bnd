@@ -1,0 +1,4 @@
+Bundle-Name: client-rest
+Bundle-SymbolicName: com.personalsoft.rest.client
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration

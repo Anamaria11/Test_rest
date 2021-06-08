@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.personalsoft.client">
+	<namespace>PS</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Client" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="clientId" primary="true" type="long" />
+
+		<!-- Audit fields -->
+        <column name="origin" type="String"></column>
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" />
+		<column name="lastName" type="String" />
+		<column name="documentType" type="int" />
+		<column name="documentNumber" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+		
+		<finder name="FullName" return-type="Collection">
+			<finder-column name="name" />
+			<finder-column name="lastName" />
+		</finder>
+
+		<finder name="DocumentT_N" return-type="Collection">
+			<finder-column name="documentType" />
+			<finder-column name="documentNumber" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+</service-builder>
